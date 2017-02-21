@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context="link.fls.swipestacksample.MainActivity">
+
+    <link.fls.swipestack.SwipeStack
+        android:id="@+id/swipeStack"
+        android:layout_width="600dp"
+        android:elevation="10dp"
+        android:layout_height="330dp"
+        android:paddingTop="15dp"
+        android:paddingRight="@dimen/padding_swipestack"
+        android:paddingLeft="@dimen/padding_swipestack"
+        android:paddingBottom="15dp"
+        app:stack_rotation="8"
+        app:stack_size="2"/>
+    <RelativeLayout
+        android:id="@+id/contenedor_perfil_respuestas"
+        android:layout_below="@id/swipeStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_nombre_edad_ubicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingBottom="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:text="Pedro, 26 (Villa Devoto)"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/container_respuestas"
+            android:layout_below="@id/txt_nombre_edad_ubicacion"
+            >
+            <TextView
+                android:id="@+id/txtSwipeLeft"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:text="¿Te gustaria que atrapen al Corre Caminos?  1 / 3"/>
+            <TextView
+                android:id="@+id/txtMsgAvisoRsta"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="20dp"
+                android:elevation="10dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#14E350"
+                android:text="Excelente respuesta!, te falta un acierto mas."
+                android:visibility="invisible"
+
+                />
+            <RelativeLayout
+                android:layout_below="@id/txtSwipeLeft"
+                android:id="@+id/buttonRelativeSwipeLeft2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/buttonSwipeLeft2"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:tag="1"
+                    android:textColor="#000"
+                    android:layout_marginLeft="15dp"
+                    android:onClick="analizarRsta"
+                    android:clickable="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/button_border_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Si me encantaria por el coyote"/>
+
+                <link.fls.swipestacksample.NumberProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/numberbar1"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/NumberProgressBar_Relax_Blue"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@id/buttonRelativeSwipeLeft2"
+                android:id="@+id/buttonRelativeSwipeLeft3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/buttonSwipeLeft3"
+                    android:onClick="analizarRsta"
+                    android:tag="2"
+                    android:clickable="true"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:background="@drawable/button_border_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Me da lo mismo"/>
+
+                <link.fls.swipestacksample.NumberProgressBar
+                    android:visibility="gone"
+                    android:id="@+id/numberbar2"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/NumberProgressBar_Relax_Blue"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@id/buttonRelativeSwipeLeft3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/buttonSwipeLeft4"
+                    android:onClick="analizarRsta"
+                    android:clickable="true"
+                    android:textSize="10sp"
+                    android:tag="3"
+                    android:gravity="center"
+                    android:background="@drawable/button_border_background"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:text="Si, pero sin usar productos ACME"/>
+
+                <link.fls.swipestacksample.NumberProgressBar
+                    android:id="@+id/numberbar3"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:layout_width="match_parent"
+                    style="@style/NumberProgressBar_Relax_Blue"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:layout_alignParentRight="true"
+        android:text="@string/swipe_right"/>
+
+    <LinearLayout
+        android:id="@+id/LL_acciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="90dp"
+        android:layout_alignParentRight="true"
+        >
+        <RelativeLayout
+            android:layout_width="65dp"
+            android:background="@drawable/border_circle_style"
+            android:id="@+id/button_icono_corazon"
+            android:layout_marginBottom="10dp"
+            android:layout_height="65dp">
+
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/icono_corazon"
+                android:src="@drawable/ic_heart"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="65dp"
+            android:background="@drawable/border_circle_style"
+            android:id="@+id/buttonSwipeRight"
+            android:layout_marginBottom="10dp"
+            android:layout_height="65dp">
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/icono_siguiente"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_delete"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="65dp"
+            android:background="@drawable/border_circle_style"
+            android:id="@+id/icono_ayuda"
+            android:onClick="mostrarDialogAlternativas"
+            android:clickable="true"
+            android:layout_height="65dp">
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/boton_ic_ayuda"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_magic_wand"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <ImageView
+                android:layout_weight="1"
+                android:id="@+id/boton_ic_ayuda_gris"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_magic_wand_gris"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="@dimen/margin_fab"
+            android:visibility="invisible"
+            android:src="@drawable/ic_content_add"
+            app:fabSize="normal"/>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>
